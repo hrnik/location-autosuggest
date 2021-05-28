@@ -1,0 +1,28 @@
+.AutoSuggest {
+  width: 100%;
+  position: relative;
+}
+
+.AutoSuggest__input {
+  width: 100%;
+  padding: 8px 8px 8px 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.AutoSuggest__suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+}
+
+.AutoSuggest__noResults {
+  padding: 8px;
+}

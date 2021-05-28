@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import debounce from "lodash.debounce";
+import SearchForm from "modules/Search/components/SearchForm";
 import "./App.css";
 
 const PLACE_TYPE = {
@@ -28,51 +29,9 @@ const transformSearch = (search) => {
 };
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchList, setSearchList] = useState([]);
-
-  const isShowSearch = searchTerm.length > 1;
-
-  const fetchDebounce = useCallback(
-    debounce((search) => {
-      fetch(
-        `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=6&solrTerm=${search}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setSearchList(data.results.docs.map(transformSearch));
-        });
-    }, 500),
-    []
-  );
-
-  useEffect(() => {
-    if (isShowSearch) {
-      fetchDebounce(searchTerm);
-    }
-  }, [searchTerm]);
-
-  const handleChange = (e) => {
-    const newSearchTerm = e.target.value;
-    setSearchTerm(newSearchTerm);
-  };
   return (
     <div className="App">
-      <form>
-        <input
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Pick-up Location"
-        ></input>
-        <ul>
-          {searchList.map((search) => (
-            <li>
-              <div>{search.name}</div>
-              <div>{search.address}</div>
-            </li>
-          ))}
-        </ul>
-      </form>
+      <SearchForm />
     </div>
   );
 }

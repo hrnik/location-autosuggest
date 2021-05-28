@@ -1,0 +1,45 @@
+.LocationInput__suggestion {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  border-bottom: 1px solid #e7e7e7;
+  cursor: pointer;
+}
+
+.LocationInput__suggestion--active {
+  background: #e7f4fe;
+}
+
+.LocationInput__suggestionLabel {
+  min-width: 60px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px 4px;
+  font-weight: 500;
+  left: 14px;
+}
+
+.LocationInput__suggestionLabel--airport {
+  background: #961412;
+}
+
+.LocationInput__suggestionLabel--city {
+  background: #0a63b0;
+}
+
+.LocationInput__suggestionLabel--district {
+  background: #017c44;
+}
+
+.LocationInput__suggestionName {
+  font-size: 14px;
+  padding-left: 8px;
+  font-weight: 500;
+}
+
+.LocationInput__suggestionAddress {
+  font-size: 12px;
+  padding-left: 8px;
+}
