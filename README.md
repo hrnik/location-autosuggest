@@ -15,7 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In this project, I tried to introduce a simple, but still scalable project structure. Some solution here can be overkill for such a small application, but idea was to introduce an architecture which can easily handle mediums size applications and more.
 
 ```
-ride-input/src
+location-autosuggest/src
 └─── components // dumb component, which can be shared across application
 │   └─── AutoSuggestInput
 │       └─── style.css
