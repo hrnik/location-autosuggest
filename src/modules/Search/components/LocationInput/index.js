@@ -21,7 +21,8 @@ const getPlaceLabel = (search) => {
 };
 
 const SuggestionItem = ({ isActive, suggestion }) => (
-  <li
+  <div
+    role="button"
     className={classNames("LocationInput__suggestion", {
       "LocationInput__suggestion--active": isActive,
     })}
@@ -44,7 +45,7 @@ const SuggestionItem = ({ isActive, suggestion }) => (
         {suggestion.address}
       </div>
     </div>
-  </li>
+  </div>
 );
 
 const LocationInput = () => {

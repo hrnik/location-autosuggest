@@ -56,19 +56,27 @@ const AutoSuggestInput = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        autocomplete="off"
+        aria-activedescendant={`AutoSuggest__suggestions--option-${activeSuggestionIndex}`}
       ></input>
 
       {isEnoughLenthOfSeach && Array.isArray(suggestions) && (
-        <ul className="AutoSuggest__suggestions">
+        <ul className="AutoSuggest__suggestions" role="listbox">
           {suggestions.length === 0 && (
             <div className="AutoSuggest__noResults">No results found</div>
           )}
           {suggestions.map((suggestion, index) => (
-            <div onMouseEnter={() => onMouseEnter(index)}>
+            <li
+              id={`AutoSuggest__suggestions--option-${index}`}
+              onMouseEnter={() => onMouseEnter(index)}
+              role="option"
+              aria-selected={activeSuggestionIndex === index}
+              tabIndex={0}
+            >
               {renderSuggestion(suggestion, {
                 isActive: activeSuggestionIndex === index,
               })}
-            </div>
+            </li>
           ))}
         </ul>
       )}
