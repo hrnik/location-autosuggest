@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Spinner from "components/Spinner";
 import "./style.css";
 
 const KEY_CODE = {
@@ -13,6 +14,7 @@ const AutoSuggestInput = ({
   onChange,
   placeholder,
   icon,
+  isLoading = false,
 }) => {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(null);
   const isEnoughLenthOfSeach = value && value.length >= 2;
@@ -69,6 +71,12 @@ const AutoSuggestInput = ({
             </div>
           ))}
         </ul>
+      )}
+
+      {isLoading && (
+        <div className="AutoSuggest__loader">
+          <Spinner></Spinner>
+        </div>
       )}
     </div>
   );

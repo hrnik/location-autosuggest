@@ -23,10 +23,11 @@
   bottom: 50%;
   transform: translate(0, -50%);
 }
+
 .AutoSuggest__icon svg {
   width: 100%;
   height: auto;
-  fill: 333333;
+  fill: #333333;
 }
 
 .AutoSuggest__suggestions {
@@ -43,4 +44,15 @@
 
 .AutoSuggest__noResults {
   padding: 8px;
+}
+
+.AutoSuggest__loader {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background: #fff;
+  right: 8px;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(0, -50%);
 }

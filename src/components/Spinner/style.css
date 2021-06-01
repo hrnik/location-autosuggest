@@ -1,0 +1,39 @@
+.Spinner,
+.Spinner:after {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.Spinner {
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  border-left: 2px solid #1a79cb;
+  transform: translateZ(0);
+  animation: load 1.1s infinite linear;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

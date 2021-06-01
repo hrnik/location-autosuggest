@@ -48,11 +48,13 @@ const getPlaceLabel = (search) => {
 const LocationInput = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchList, setSearchList] = useState(null);
+  const [isFetching, setIsFetching] = useState(false);
 
   const isShowSearch = searchTerm.length > 1;
 
   const fetchDebounce = useCallback(
     debounce((search) => {
+      setIsFetching(true);
       fetch(
         `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=6&solrTerm=${search}`
       )
@@ -63,6 +65,9 @@ const LocationInput = () => {
           } else {
             setSearchList(data.results.docs.map(transformSearch));
           }
+        })
+        .finally(() => {
+          setIsFetching(false);
         });
     }, 500),
     []
@@ -84,6 +89,7 @@ const LocationInput = () => {
       placeholder="Pick-up Location"
       suggestions={searchList}
       icon={<LocationIcon />}
+      isLoading={isFetching}
       renderSuggestion={(suggestion, { isActive }) => (
         <li
           className={classNames("LocationInput__suggestion", {
