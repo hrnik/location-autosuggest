@@ -1,6 +1,6 @@
 # Location Autosuggest Input
 
-[Demo Link](https://ride-input-ih10d3qt3-hrnik.vercel.app/)
+[Demo Link](https://location-autosuggest.vercel.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
