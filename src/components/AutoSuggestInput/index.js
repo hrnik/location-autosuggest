@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classNames from "classnames";
 import Spinner from "components/Spinner";
 import "./style.css";
 
@@ -15,6 +16,7 @@ const AutoSuggestInput = ({
   placeholder,
   icon,
   isLoading = false,
+  testId = "",
 }) => {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(null);
   const isEnoughLenthOfSeach = value && value.length >= 2;
@@ -49,7 +51,11 @@ const AutoSuggestInput = ({
     }
   };
   return (
-    <div className="AutoSuggest" onKeyDown={onKeyDown}>
+    <div
+      className={classNames("AutoSuggest")}
+      onKeyDown={onKeyDown}
+      data-test={testId && `AutoSuggest_${testId}`}
+    >
       {icon && <div className="AutoSuggest__icon">{icon}</div>}
       <input
         className="AutoSuggest__input"
@@ -57,6 +63,7 @@ const AutoSuggestInput = ({
         onChange={onChange}
         placeholder={placeholder}
         autocomplete="off"
+        aria-label={placeholder}
         aria-activedescendant={`AutoSuggest__suggestions--option-${activeSuggestionIndex}`}
       ></input>
 

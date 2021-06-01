@@ -87,6 +87,7 @@ const LocationInput = () => {
       suggestions={suggestionList}
       icon={<LocationIcon />}
       isLoading={isFetching}
+      testId="LocationInput"
       renderSuggestion={(suggestion, { isActive }) => (
         <SuggestionItem suggestion={suggestion} isActive={isActive} />
       )}
