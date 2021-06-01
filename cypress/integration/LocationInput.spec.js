@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 context("Search", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000/");
