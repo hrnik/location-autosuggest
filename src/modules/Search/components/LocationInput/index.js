@@ -1,9 +1,9 @@
-import AutoSuggestInput from "components/AutoSuggestInput";
-import classNames from "classnames";
-import "./style.css";
-
 import { useEffect, useState, useCallback } from "react";
 import debounce from "lodash.debounce";
+import classNames from "classnames";
+import AutoSuggestInput from "components/AutoSuggestInput";
+import { ReactComponent as LocationIcon } from "./LocationIcon.svg";
+import "./style.css";
 
 const PLACE_TYPE = {
   CITY: "C",
@@ -83,6 +83,7 @@ const LocationInput = () => {
       onChange={handleChange}
       placeholder="Pick-up Location"
       suggestions={searchList}
+      icon={<LocationIcon />}
       renderSuggestion={(suggestion, { isActive }) => (
         <li
           className={classNames("LocationInput__suggestion", {

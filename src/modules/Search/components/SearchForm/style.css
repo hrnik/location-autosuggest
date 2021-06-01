@@ -1,7 +1,9 @@
 .SearchForm {
   background: #ffb700;
-  padding: 16px 8px;
+  padding: 16px;
   border-radius: 8px;
-
+  /* Set witdh for demo purpose */
   min-width: 360px;
+  max-width: 600px;
+  flex: 1;
 }

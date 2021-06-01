@@ -1,14 +1,32 @@
 .AutoSuggest {
   width: 100%;
   position: relative;
+  color: #1a1a1a;
 }
 
 .AutoSuggest__input {
   width: 100%;
+  height: 44px;
+  line-height: 24px;
   padding: 8px 8px 8px 32px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   font-size: 14px;
+}
+
+.AutoSuggest__icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 8px;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(0, -50%);
+}
+.AutoSuggest__icon svg {
+  width: 100%;
+  height: auto;
+  fill: 333333;
 }
 
 .AutoSuggest__suggestions {

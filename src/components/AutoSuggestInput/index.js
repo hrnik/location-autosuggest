@@ -12,6 +12,7 @@ const AutoSuggestInput = ({
   renderSuggestion,
   onChange,
   placeholder,
+  icon,
 }) => {
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(null);
   const isEnoughLenthOfSeach = value && value.length >= 2;
@@ -47,6 +48,7 @@ const AutoSuggestInput = ({
   };
   return (
     <div className="AutoSuggest" onKeyDown={onKeyDown}>
+      {icon && <div className="AutoSuggest__icon">{icon}</div>}
       <input
         className="AutoSuggest__input"
         value={value}
